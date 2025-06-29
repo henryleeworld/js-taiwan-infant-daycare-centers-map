@@ -11,8 +11,8 @@ $ git clone
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/hQcGcYk.png)
+![](https://i.imgur.com/AxSOo2X.png)
 > 托嬰中心可讓寶寶提早接觸團體生活，但由於老師需要照顧不只一位孩子，較難兼顧每位孩子的個別需求
 
-![](https://i.imgur.com/VohAG4d.png)
+![](https://i.imgur.com/zAN4P9x.png)
 > 儘管法定規定托嬰中心基本一比五的師生比，但若照顧年紀更小的嬰幼兒，能降低照顧比到一比四、一比三更好
