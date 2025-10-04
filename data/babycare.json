@@ -6990,7 +6990,7 @@
                 "address": "106臺北市大安區臺北市大安區安和路1段135巷14號1樓",
                 "phone": "(02)2754-3196",
                 "capacity": 25,
-                "status": 9,
+                "status": 10,
                 "is_active": true
             },
             "geometry": {
@@ -10330,7 +10330,7 @@
                 "address": "237新北市三峽區弘園街22號1樓",
                 "phone": "02-26739366",
                 "capacity": 50,
-                "status": 48,
+                "status": 49,
                 "is_active": true
             },
             "geometry": {
@@ -11310,7 +11310,7 @@
                 "address": "220新北市板橋區莊敬路42之4號3樓",
                 "phone": "22511767",
                 "capacity": 55,
-                "status": 28,
+                "status": 29,
                 "is_active": true
             },
             "geometry": {
@@ -16790,7 +16790,7 @@
                 "address": "704臺南市北區南園街127巷50之1號",
                 "phone": "06-2002719",
                 "capacity": 58,
-                "status": 33,
+                "status": 32,
                 "is_active": true
             },
             "geometry": {
@@ -27730,7 +27730,7 @@
                 "address": "338桃園市蘆竹區中興里1鄰豪登一街11號1樓",
                 "phone": "03-3230679",
                 "capacity": 49,
-                "status": 48,
+                "status": 49,
                 "is_active": true
             },
             "geometry": {
