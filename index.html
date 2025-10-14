@@ -9,97 +9,42 @@
         <meta property="og:locale" content="zh_TW" />
         <meta property="og:type" content="website" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.css" integrity="sha512-D2c/nmSVlwoZk29SLwJK8GkLyCyPuNbZ/vZQL/lNzw+o+yXzsbnJt7lK/iCfdBmgyLRDi0qx27gpE8Zb1C6I7g==" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sidebar-v2@0.4.0/css/ol3-sidebar.min.css" type="text/css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/dark-hive/jquery-ui.min.css" integrity="sha512-12WoLKglPPjG1KwuSGLsvLS8Ebg7sgNV4WrJecc2B8CzvA/3EmZl4xLvkmV3tNmaHehFAWVbep6X3S5Bu48FWg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/dark-hive/theme.min.css" integrity="sha512-z+VYZLLM5Gm/BpG+DJr0AIW8AJZCEb/75F5WFz0mrdl8oBQ58V4uLR05Shuq5X2Gk6KsPrT1/nb8OgJqvkjcQA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/centers-map.css" type="text/css" />
         <title>台灣托嬰中心地圖</title>
     </head>
     <body>
-        <div id="sidebar" class="sidebar collapsed">
-            <div class="sidebar-tabs">
-                <ul role="tablist">
-                    <li>
-                        <a href="#home" role="tab"><i class="fas fa-bars"></i></a>
-                    </li>
-                    <li>
-                        <a href="#book" role="tab"><i class="fas fa-book"></i></a>
-                    </li>
-                    <li>
-                        <a href="#settings" role="tab"><i class="fas fa-cog"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/henryleeworld/js-taiwan-infant-daycare-centers-map" role="tab" target="_blank"><i class="fab fa-github"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="sidebar-content">
-                <div class="sidebar-pane" id="home">
-                    <h1 class="sidebar-header">
-                        <span id="sidebarTitle">請點選地圖中的點</span><span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
-                    </h1>
-                    <div id="sidebarContent">
-                        <div class="accordion" id="accordionMain">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="heading1">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInfo" aria-expanded="true" aria-controls="collapseInfo">
-                                        基本資料
-                                    </button>
-                                </h2>
-                                <div id="collapseInfo" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionMain">
-                                    <div class="accordion-body" id="infoBox"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="links" class="btn-group-vertical" role="group" style="width: 100%;">
-                        <a id="linkPreschool" class="btn btn-primary btn-lg btn-block"></a>
-                        <a href="https://github.com/henryleeworld/js-taiwan-infant-daycare-centers-map/issues" target="_blank" class="btn btn-primary btn-lg btn-block">網站問題反應</a>
-                    </div>
-                </div>
-                <div class="sidebar-pane" id="book">
-                    <h1 class="sidebar-header">
-                        <span id="weekTitle">說明</span><span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
-                    </h1>
-                    <div>
-                        <p>每個三角形代表一間托嬰中心，跟著三角形的數字是該托嬰中心的核定收托與實際收托人數，三角形的顏色可以參考下面說明：</p>
-                        <ul>
-                            <li><span style="color: #48c774;">▲</span>：核定收托大於實際收托人數，表示還可以接受新的送托</li>
-                            <li><span style="color: #ffdd57;">▲</span>：核定收托等於或小於收托人數，表示已經沒有名額</li>
-                            <li>藍色圓點：你目前所在位置（需要同意網站授權）</li>
-                        </ul>
-                        注意事項：
-                        <ul>
-                            <li>地圖位置由程式自動產生，可能會跟實際位置有差異，僅供參考</li>
-                            <li><a href="https://ncwisweb.sfaa.gov.tw/home/childcare-center" target="_blank">資料來源</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="sidebar-pane" id="settings">
-                    <h1 class="sidebar-header">
-                        <span id="weekTitle">設定</span><span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
-                    </h1>
-                    <div>
-                        <a href="#" class="btn btn-primary btn-lg btn-block" id="btn-geolocation">回到目前位置</a>
-                    </div>
-                    <hr />
-                    <div class="card">
-                        <h5 class="card-title">搜尋</h5>
-                        <div class="form-group">
-                            <label for="findPoint">名稱或住址</label>
-                            <input type="text" id="findPoint" name="findPoint" class="form-control" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="map"></div>
+        <div class="floating-search">
+            <input type="text" id="findPoint" name="findPoint" class="form-control" placeholder="搜尋托嬰中心名稱或地址" />
         </div>
-        <div id="map" class="sidebar-map"></div>
+        <div class="floating-controls">
+            <button class="btn btn-primary btn-sm" id="btn-geolocation" title="定位目前位置"><i class="fa fa-location-arrow"></i> 我的位置</button>
+        </div>
+        <div class="info-panel">
+            <h6>🍼 台灣托嬰中心地圖</h6>
+            <ul style="margin: 0; padding-left: 20px;">
+                <li><span style="color: #48c774; font-size: 18px;">▲</span> 尚有名額</li>
+                <li><span style="color: #ffdd57; font-size: 18px;">▲</span> 目前額滿</li>
+                <li><span style="color: #cccccc; font-size: 18px;">▲</span> 暫停收托</li>
+                <li><span style="color: #ff0000; font-weight: bold;">紅框</span> 有裁罰記錄</li>
+                <li><span style="color: #0000ff; font-weight: bold;">藍框</span> 有判決記錄</li>
+            </ul>
+            <p style="margin: 10px 0 5px 0; font-size: 12px; color: #636e72;">
+                點擊地圖上的標記查看詳細資訊
+            </p>
+            <small>
+                <a href="https://ncwisweb.sfaa.gov.tw/home/childcare-center" target="_blank">資料來源</a> | <a href="https://github.com/henryleeworld/js-taiwan-infant-daycare-centers-map/issues" target="_blank">問題回報</a> | 
+            </small>
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.8/js/bootstrap.bundle.min.js" integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js" integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.8/js/bootstrap.min.js" integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/routie/0.3.2/routie.min.js" integrity="sha512-uawpwYzsuRBIPLEokpO3B70T3/gISq67oTbMbUxvO3CeWaDxvLxwSq6Lb3cYeGUj1Pr//s1tPjVmlRZ/HEDazQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.js" integrity="sha512-O7kHS9ooekX8EveiC94z9xSvD/4xt10Qigl6uEKvspYykdux3Ci5QNu5fwi4ca0ZkZI/oCgx5ja8RklWUEqzxQ==" crossorigin="anonymous" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/sidebar-v2@0.4.0/js/ol3-sidebar.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" referrerpolicy="no-referrer" defer></script>
         <script src="js/centers-map.js" type="text/javascript" defer></script>
     </body>
 </html>
