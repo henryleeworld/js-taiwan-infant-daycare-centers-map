@@ -11,5 +11,5 @@ $ git clone
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/YnxrYPy.png)
+![](https://i.imgur.com/ImpGySO.png)
 > 托嬰中心可讓寶寶提早接觸團體生活，但由於老師需要照顧不只一位孩子，較難兼顧每位孩子的個別需求
